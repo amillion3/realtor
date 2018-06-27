@@ -1,4 +1,5 @@
-.ListingForm {
-  background-color: antiquewhite;
-  height: 45vh;
+@import 'styles/_colors';
+
+.ListingForm{
+  background-color: $red;
 }
