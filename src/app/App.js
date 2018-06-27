@@ -9,9 +9,15 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        <Listings></Listings>
-        <Building></Building>
-        <ListingForm></ListingForm>
+        <div className="col-md-6">
+          <Listings></Listings>
+        </div>
+        <div className="col-md-6">
+          <Building></Building>
+        </div>
+        <div className="col-md-12">
+          <ListingForm></ListingForm>
+        </div>
       </div>
     );
   }
