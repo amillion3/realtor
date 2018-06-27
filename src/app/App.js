@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
+
+import Listings from '../components/Listings/Listings';
+import Building from '../components/Building/Building';
+import ListingForm from '../components/ListingForm/ListingForm';
 import './App.css';
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button className='btn btn-info'>I sure do wish it would warm up outside.</button>
+        <div className="col-md-6">
+          <Listings></Listings>
+        </div>
+        <div className="col-md-6">
+          <Building></Building>
+        </div>
+        <div className="col-md-12">
+          <ListingForm></ListingForm>
+        </div>
       </div>
     );
   }
