@@ -4,23 +4,35 @@ import Listings from '../components/Listings/Listings';
 import Building from '../components/Building/Building';
 import ListingForm from '../components/ListingForm/ListingForm';
 import connection from '../firebaseRequests/connection';
+import listingRequests from '../firebaseRequests/listings';
 import './App.css';
 
 class App extends Component {
+  state = {
+    listings: [],
+  }
+
   componentDidMount () {
     connection();
+    listingRequests.getRequest()
+      .then(listings => {
+        this.setState({listings});
+      })
+      .catch(err => {
+        console.error(err);
+      });
   }
   render () {
     return (
       <div className="App">
         <div className="col-md-6">
-          <Listings></Listings>
+          <Listings />
         </div>
         <div className="col-md-6">
-          <Building></Building>
+          <Building />
         </div>
         <div className="col-md-12">
-          <ListingForm></ListingForm>
+          <ListingForm />
         </div>
       </div>
     );
