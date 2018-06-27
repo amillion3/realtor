@@ -26,7 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="col-md-6">
-          <Listings />
+          <Listings listings={this.state.listings} />
         </div>
         <div className="col-md-6">
           <Building />
