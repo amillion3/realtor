@@ -10,10 +10,11 @@ class Listings extends React.Component {
   static propTypes = {
     // an array of objects
     listings: PropTypes.arrayOf(listingShape),
+    onListingSelection: PropTypes.func,
   };
 
   render () {
-    const {listings} = this.props;
+    const {listings, onListingSelection} = this.props;
     // const listings = this.props.listing // ES 5
     const listingsItemComponents = listings.map((listing, index) => {
       return (
@@ -21,6 +22,7 @@ class Listings extends React.Component {
           listing={listing}
           index={index}
           key={listing.id}
+          onSelect={onListingSelection}
         />
       );
     });
